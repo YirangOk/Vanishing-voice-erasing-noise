@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/kbr6bof.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <script>
+    (function (d) {
+      var config = {
+          kitId: "raj0vjt",
+          scriptTimeout: 3000,
+          async: true,
+        },
+        h = d.documentElement,
+        t = setTimeout(function () {
+          h.className =
+            h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+        }, config.scriptTimeout),
+        tk = d.createElement("script"),
+        f = false,
+        s = d.getElementsByTagName("script")[0],
+        a;
+      h.className += " wf-loading";
+      tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState;
+        if (f || (a && a != "complete" && a != "loaded")) return;
+        f = true;
+        clearTimeout(t);
+        try {
+          Typekit.load(config);
+        } catch (e) {}
+      };
+      s.parentNode.insertBefore(tk, s);
+    })(document);
+  </script>
+  <body>
+    <main>
+      <div class="canvas"></div>
+      <div class="information">
+        <title class="san-serif">Vanishing Voices, Erasing Noise</title>
+        <div class="script serif" id="script">
+          <div class="script-content">
+            <div>
+              <p class="kr">
+                자크 데리다는 아카이브가 단순한 보존이 아니라 권력의 행사라고
+                말했다.
+              </p>
+              <p>
+                Jacques Derrida stated that an archive is not mere preservation
+                but an exercise of power.
+              </p>
+            </div>
+
+            <div>
+              <p class="kr">
+                기록되지 않은 것은 마치 존재하지 않은 것과 같으며, 무엇을
+                기록하고 무엇을 남길 것인지는 언제나 권력에 의해 결정된다.
+              </p>
+              <p>
+                That which is not documented is treated as though it never
+                existed, and the choice of what to record and preserve is
+                invariably determined by power.
+              </p>
+            </div>
+
+            <div>
+              <p class="kr">그렇다면, 소리는 어떻게 기록될 수 있는가?</p>
+              <p>So how, then, can sound be recorded?</p>
+            </div>
+
+            <div>
+              <p class="kr">
+                그리고 소리가 단순한 흔적이 아니라 존재의 증명이라면, 이 시스템
+                속에서 우리는 어떻게 존재할 것인가?
+              </p>
+              <p>
+                And if sound is not merely a trace but a proof of existence, how
+                do we exist within this system?
+              </p>
+            </div>
+
+            <div>
+              <p class="kr">우리는 어떻게 존재를 증명할 것인가?</p>
+              <p>How do we prove our existence?</p>
+            </div>
+
+            <div>
+              <p class="kr">기록되지 않는 목소리는 쉽게 지워진다.</p>
+              <p>Voices that are not recorded are easily erased.</p>
+            </div>
+
+            <div>
+              <p class="kr">
+                하지만 기록된 목소리는 반드시 남을 수 있을까, 그리고 이 방법은
+                내가 목소리를 남기는 또 다른 방법이 될 수 있을까?
+              </p>
+              <p>
+                But does a recorded voice necessarily remain, and can this
+                method become another way for me to leave my voice behind?
+              </p>
+            </div>
+
+            <div>
+              <p class="kr">
+                마지막으로 2024년 한국 뉴스를 공유하며 이 이야기를 마무리한다.
+              </p>
+              <p>
+                Finally, I will share a piece of Korean news from 2024 as I
+                conclude this story.
+              </p>
+            </div>
+
+            <div>
+              <p class="kr">
+                한국의 탄핵을 지지하는 시위 집단이 국가 기관에 의해 '간첩
+                활동'과 연루되었다는 프레임을 씌워 기부자들의 정보가
+                유출되었다는 사실이 보도되었다.
+              </p>
+              <p>
+                It was reported that a protest group supporting impeachment in
+                Korea was framed by a state agency for "espionage activities,"
+                resulting in the leak of donor information.
+              </p>
+            </div>
+
+            <div>
+              <p class="kr">
+                나는 이를 통해 우리의 소리는 남겨지기도 하고, 사라지기도 하지만
+                때로는 기록되었기에 오히려 목소리가 삭제될 위험을 감수해야
+                한다는 사실을 알게 되었다.
+              </p>
+              <p>
+                From this, I realized that our voices can remain or vanish, yet
+                sometimes the very act of being recorded carries the risk of
+                having those voices erased.
+              </p>
+            </div>
+          </div>
+
+          <div class="button">
+            <button id="before">Before</button>
+            <button id="next">Next</button>
+          </div>
+        </div>
+        <div class="personal-info serif">
+          <div class="gender" id="gender">she/her</div>
+          <div class="age" id="age">Late 20s</div>
+          <div class="nationality" id="nationality">South Korea</div>
+          <div class="name" id="name">Ok Yirang</div>
+          <div class="birth" id="birth">December 15, 1995</div>
+        </div>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="information.js"></script>
+  </body>
+</html>

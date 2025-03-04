@@ -1,0 +1,209 @@
+:root {
+  /* Colors */
+  --blue: rgb(0, 0, 255);
+  --green: rgb(0, 255, 0);
+  --white: #fff;
+  --black: #000;
+  --background: #1d1b27;
+  --border: 1px solid;
+  --z-index: 9999;
+
+  /* Base font size */
+  --body-font-size: clamp(20px, 1.5vw, 100px);
+
+  /* Font sizes (필요한 최소한의 종류로) */
+  --font-small: calc(var(--body-font-size) * 0.85);
+  --font-medium: calc(var(--body-font-size) * 1.25);
+  --font-large: calc(var(--body-font-size) * 4);
+
+  /* Gaps */
+  --gap-small: calc(var(--body-font-size) / 6);
+  --gap-medium: calc(var(--body-font-size) / 4);
+  --gap-large: calc(var(--body-font-size) / 2);
+
+  /* Padding */
+  --padding-small: var(--body-font-size);
+  --padding-medium: calc(var(--body-font-size) * 2);
+  --padding-large: calc(var(--body-font-size) * 4);
+}
+
+/* 공통 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+}
+
+.san-serif {
+  font-family: "birra", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.serif {
+  font-family: "drummond-variable", sans-serif;
+  font-variation-settings: 'wght'400;
+}
+
+.kr {
+  font-family: "agchoijeongho-screen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+  line-height: 2.75rem;
+  text-shadow: 0.03em 0.03em 0 transparent;
+  -webkit-text-stroke: 0.4px currentColor;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 기본적인 폰트 스무딩 적용 */
+body {
+  text-rendering: optimizeLegibility;
+  /* 글자 가독성 최적화 */
+  -webkit-font-smoothing: antialiased;
+  /* WebKit 브라우저에서 부드러운 폰트 */
+  -moz-osx-font-smoothing: grayscale;
+  /* macOS에서 그레이스케일 렌더링 */
+}
+
+p {
+  padding-right: 1rem;
+}
+
+canvas {
+  position: relative;
+  left: 0;
+  background-color: transparent;
+  /* background-blend-mode: multiply; */
+}
+
+main {
+  /* padding-left: 500px; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* gap: var(--gap-large); */
+  background-color: var(--blue);
+}
+
+canvas {
+  display: block;
+}
+
+title {
+  display: block;
+  font-size: var(--font-large);
+}
+
+.information {
+  width: 100%;
+  height: fit-content;
+  bottom: 0;
+  /* bottom: 0; */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 9;
+  /* margin-left: 500px; */
+  padding: 1rem;
+  padding-bottom: 15rem;
+}
+
+.personal-info {
+  padding-top: 0.75rem;
+  font-size: var(--font-medium);
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  bottom: 5rem;
+}
+
+.personal-info div {
+  border: 2px solid var(--black);
+  padding: 0.2rem 0.75rem;
+  border-radius: 5rem;
+  display: flex;
+  font-size: var(--font-medium);
+  margin-right: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.script {
+  width: 100%;
+  height: 100%;
+  font-size: var(--font-medium);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  /* border-top: 1px solid var(--black); */
+  padding-top: 0.5rem;
+}
+
+.script .script-content {
+  display: none;
+}
+
+.script .script-content div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.script .script-content:first-child {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  /* display: flex;
+  justify-content: space-between;
+  width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 1rem;
+  gap: 1rem;
+
+}
+
+button {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+::selection {
+  background-color: var(--green);
+  /* color: white; */
+}
+
+button:hover {
+  background-color: var(--green);
+  color: white;
+}
+
+.personal-info div{
+  display: none;
+}
