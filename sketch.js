@@ -3,7 +3,7 @@
 // ─────────────────────────────
 
 let grid; // 2차원 배열: 각 셀은 0 또는 [brightness, source]
-let w = 15; // 그리드 셀 크기
+let w = 4; // 그리드 셀 크기
 let cols, rows; // 그리드 열, 행 수
 
 let hueValue = 200;
